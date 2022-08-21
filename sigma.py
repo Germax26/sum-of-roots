@@ -1,6 +1,6 @@
 import string
 import sys
-from typing import Dict, Generator, ItemsView, Iterator, List, Set, Tuple
+from typing import Dict, Generator, List, Tuple
 
 DEGREE = int(sys.argv[1])
 
@@ -8,7 +8,7 @@ all_roots = string.ascii_letters
 assert 0 <= DEGREE <= len(all_roots)
 
 class Expr:
-	def __init__(self, *sigmas: 'Expr | Sigma'):
+	def __init__(self, *sigmas: 'Expr'):
 		self.sigmas: List[Sigma] = []
 		for sigma in sigmas:
 			if isinstance(sigma, Sigma): self.sigmas.append(sigma)
